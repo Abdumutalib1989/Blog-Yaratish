@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'maqola/style/style.css' %}">
+    <link rel="stylesheet" href="{% static 'maqola/bootstrap-5.0.2-dist/css/bootstrap.css' %}">
+    <title>Maqola 1</title>
+</head>
+<body>
+    <div class="container">
+        <h1>2021 June</h1>
+        <div class="row">
+            {% if rasmlar|length > 0 %}
+            {% for i in rasmlar %}
+            <div class="col-12">
+                <img src="{{ i.rasm.url }}" alt="">
+                <p> {{ m.matn }}</p>
+            </div>
+            <div class="col-12">
+                <img src="{{ i.rasm.url }}" alt="" class="img-responsive">
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="col-12">
+                <p> {{ m.matn }}</p>
+            </div>
+            {% endif %}
+        </div>
+        <div class="row footer">
+            <p>© 2021 abdumutalib.com</p>
+        </div>
+    </div>
+</body>
+</html>
